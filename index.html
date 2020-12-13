@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sidebar Dashboard Template</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Day', 'Sales', 'Expenses'],
+          ['Dec 2',  1000,      400],
+          ['Dec 3',  1170,      460],
+          ['Dec 4',  660,       1120],
+          ['Dec 5',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Daily data',
+          curveType: 'function',
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  </head>
+  <body>
+
+    <input type="checkbox" id="check" checked="checked">
+    <!--header area start-->
+    
+    <header>
+        <div class="wrapper">
+            <div class="navbar">
+                <div class="left">
+                    <label for="check">
+                        <i class="fas fa-location-arrow" id="sidebar_btn"></i>
+                      </label>
+                </div>
+                <div class="right">
+                    <a href="#" id="notification"><i class="fas fa-bell" style="color: white;"></i></a>
+                    <ul>
+                        
+                      <li>
+                        <a href="#">
+                            <img src="Profile.png" alt="Admin" width="40">
+                          </a>
+                         
+                        <div class="dropdown">
+                            <ul>
+                              <li><strong style="color: blue;">Bhuvanesh Ram</strong></li>
+                              <li style="color: lightgrey;">bhuvaneshram@klenty.com</li>
+                              <br>
+                              <hr>
+                              <br>
+                              <li><a href="#"><i class="fas fa-gift"></i><span style="color: black;">What's New?</span> </a></li>
+                              <li><a href="#"><i class="fas fa-heart" style="color: red;"></i> <span style="color: black;">Refer a friend</span></a></li>
+                              <li><a href="#"><i class="fas fa-cog"></i> <span style="color: black;">Settings</span></a></li>
+                              <li><a href="#"><i class="fas fa-sign-out-alt"></i>  <span style="color: black;">Sign Out</span></a></li>
+                          </ul>
+                        </div>
+                        
+                      </li>
+                      
+                  </ul>
+                </div>
+            </div>
+        </div>	
+      
+      
+    
+    </header>
+    <!--header area end-->
+    <!--sidebar start-->
+    <div class="sidebar" style="z-index: 100;">
+        
+      <a href="#"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="#"><i class="fas fa-user"></i><span>Dashboard</span></a>
+      <a href="#"><i class="fas fa-paper-plane"></i><span>Projects</span></a>
+      <a href="#"><i class="far fa-calendar-check"></i><span>Calendar</span></a>
+      <a href="#"><i class="fas fa-envelope"></i><span>Mail</span></a>
+      <a href="#"><i class="fas fa-phone-alt"></i><span>Contact</span></a>
+      <a href="#"><i class="fas fa-chart-line"></i><span>Trend</span></a>
+      <a href="#"><i class="fas fa-cogs"></i><span>Settings</span></a>
+
+        <div class="sidebar_bottom">
+            <a href="#"><i class="fas fa-keyboard"></i><span>Type</span></a>
+            <a href="#"><i class="far fa-question-circle" style="color: red; font-size: 24px;"></i><span>About Us</span></a>
+        </div>
+
+    </div>
+    <!--sidebar end-->
+
+    <!-- Inner content start -->
+    <div class="content">
+        <div class="left_card">
+            
+                <div id="curve_chart" style="width: 500px; height: 300px;"></div>
+            
+            <div class="card">
+
+                        
+                <div class="heading">
+                    <div class="heading_left">
+                        <i class="far fa-clock"></i>
+                    <span class="heading--sup">EMAILS SCHEDULED</span>
+                    </div>
+                    <div class="heading_right">0</div>
+                </div>
+                <hr>
+        
+                <div class="info">
+                    <p>
+                        <span>0</span>
+                        <span>Today</span>
+                    </p>
+                    <p>
+                        <span>0</span>
+                        <span>Upcoming</span>
+                    </p>
+                    <p>
+                        <span>0</span>
+                        <span>Awaiting Approval</span>
+                    </p>
+                    <p>
+                        <span>0</span>
+                        <span>Erros</span>
+                    </p>
+                </div>
+        
+            </div>
+        </div>
+        <div class="right_card">
+            <h2>LIVEFEED</h2>
+            <div class="filter_row">
+                <div class="filter">
+                    <label for="filter_option">Show:</label>
+                    <select name="filter_option" id="filter_option">
+                        <option value="ALL">ALL</option>
+                        <option value="option2">Sample 1</option>
+                    </select>
+                    <span><i class="fas fa-filter"></i></span>
+                </div>
+                <div class="filter_Search">
+                    <i class="fas fa-search"></i>
+                    <input type="search" name="" id="">
+                </div>
+            </div>
+            <div class="passage">
+                <img src="./Capture.PNG" alt="no data">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, quod possimus. Neque similique facilis accusamus eveniet enim ab. Dolorum inventore sit distinctio itaque! Impedit a consequuntur provident totam fugit aliquid?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inner content end -->
+    
+    <script>
+        document.querySelector(".right ul li").addEventListener("click", function(){
+              this.classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>
